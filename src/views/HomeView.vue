@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="home">
-      <PostComponentVue msg="Post1"/>
+        <ul>
+            <PostComponentVue class="post" :date="product.postDate" :msg="product.postText" :imgPath="product.postImage" v-for = "product in json" :key="product.id">
+            
+            </PostComponentVue>
+        </ul>
     </div>
     
   </div>
@@ -14,8 +18,13 @@ export default {
   name: 'HomeView',
   components: {
     PostComponentVue
-  }
+  },
+  data: function() {
+    const json = this.$store.getters.getPosts
+    return {json};
+  },
 }
+
 </script>
 <style>
 

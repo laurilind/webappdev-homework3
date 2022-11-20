@@ -3,18 +3,18 @@
         
         <div class="post-element">
                 <span id="post-header">
-                    <img src="../assets/logo.png" class="post-header-img" width="48" height="48">
+                    <img src="/logo.png" class="post-header-img" width="48" height="48">
                     <p class="post-date" id="post-element-date">Oct 22, 2022</p>
                 </span>
                 <div class="post-image">
-                    <img src="../assets/tartu.jpg" class="post-image">
+                    <img :src="'/'+imgPath" class="post-image">
                 </div>
                 <p>Post 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
                     veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
                 </p>
                 <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
+                    <img src="/thumbsup.png" width="32" height="32">
                 </div>
         </div>
     </div>
@@ -23,8 +23,18 @@
   <script>
   export default {
     name: 'PostComponent',
+
     props: {
-      msg: String
+      msg: String,
+      date: String,
+      imgPath: String
+
+    },
+
+    methods: {
+        onClick() {
+            console.log("Clicked!")
+        },
     }
   }
   </script>
