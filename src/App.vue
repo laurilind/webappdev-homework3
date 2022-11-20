@@ -23,11 +23,13 @@ export default {
 
 <style>
 #app {
+  background-color: #dee7e5;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-width: 100%;
 }
 
 nav {
@@ -40,6 +42,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #a35d45;
 }
 </style>

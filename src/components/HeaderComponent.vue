@@ -24,7 +24,8 @@
   
     
     .Header {
-        background-color: #d0b998;
+        background-color: #a2c5b8;
+        display: black;
     }
     nav {
     padding: 30px;
@@ -36,7 +37,7 @@
     }
     
     nav a.router-link-exact-active {
-    color: #2b8e61;
+    color: #a35d45;
     }
     h3 {
         margin: 40px 0 0;

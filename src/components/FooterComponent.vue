@@ -18,6 +18,6 @@
   
     
     .Footer {
-        background-color: #d0b998;
+        background-color: #a2c5b8;;
     }
   </style>
