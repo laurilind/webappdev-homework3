@@ -1,91 +1,7 @@
 <template>
   <div>
     <div class="home">
-      <ul class="post-list" id="post-list-id">
-        <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" class="post-header-img" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 22, 2022</p>
-                </span>
-                <div class="post-image">
-                    <img src="../assets/tartu.jpg" class="post-image">
-                </div>
-                <p>Post 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
-                    veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-            </div>
-
-
-
-            <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 18, 2022</p>
-                </span>
-
-                <p>
-                    Post 2 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
-                    veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-            </div>
-
-            <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 18, 2022</p>
-                </span>
-                <p>Post 3 - Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                     explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
-                     consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, 
-                     qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora 
-                     incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum 
-                     exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? 
-                     Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
-                     vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?.
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-            </div>
-
-            <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 18, 2022</p>
-                </span>
-                <p>Post 4 - At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti 
-                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia 
-                    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. 
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-            </div>
-
-            <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 18, 2022</p>
-                </span>
-                <img src="../assets/logo.png" class="post-image" width="480" height="360">
-                <p>
-                    Post 5 - eque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-            </div>
-        -->
-          </ul>
+      <PostComponentVue msg="Post1"/>
     </div>
     
   </div>
@@ -93,10 +9,11 @@
 
 <script>
 // @ is an alias to /src
-
+import PostComponentVue from '@/components/PostComponent.vue';
 export default {
   name: 'HomeView',
   components: {
+    PostComponentVue
   }
 }
 </script>
@@ -112,22 +29,7 @@ head {
 
 .show {display:block;}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    border-radius: 10px;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    min-height: 60px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
 
 .menuLinks:hover {
