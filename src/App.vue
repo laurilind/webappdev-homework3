@@ -1,19 +1,22 @@
 
 <template>
   
-  <HeaderComponent msg="Hoooo"/>
+  <HeaderComponent msg="header"/>
     
   <router-view/>
+  <FooterComponent msg="footer"/>
 </template>
 
 <script>
 // @ is an alias to /src
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   }
 }
 </script>
