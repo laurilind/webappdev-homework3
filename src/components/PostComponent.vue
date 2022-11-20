@@ -1,53 +1,54 @@
 <template>
-    <div class="Post">
         
-        <div class="post-element">
-                <span id="post-header">
-                    <img src="../assets/logo.png" class="post-header-img" width="48" height="48">
-                    <p class="post-date" id="post-element-date">Oct 22, 2022</p>
-                </span>
-                <div class="post-image">
-                    <img src="../assets/tartu.jpg" class="post-image">
-                </div>
-                <p>Post 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
-                    veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
-                </p>
-                <div class="post-footer">
-                    <img src="../assets/thumbsup.png" width="32" height="32">
-                </div>
-        </div>
+    <div class="post-element">
+            <span id="post-header">
+                <img src="/logo.png" class="post-header-img" width="48" height="48">
+                <p class="post-date" id="post-element-date">Oct 22, 2022</p>
+            </span>
+            <div class="post-image">
+                <img :src="'/'+imgPath" class="post-image">
+            </div>
+            <p>Post 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
+                veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
+            </p>
+            <div class="post-footer">
+                <img src="/thumbsup.png" width="32" height="32" @click="likeCounter++">
+                <p class = "like_counter">{{likeCounter}}</p>
+            </div>
     </div>
+    
   </template>
   
   <script>
+import { isIntegerKey } from '@vue/shared';
+
   export default {
     name: 'PostComponent',
+    data() {
+	  return {
+    	likeCounter: 0
+  	}
+	},
     props: {
-      msg: String
+      msg: String,
+      date: String,
+      imgPath: String
+    },
+    methods: {
+        onClick() {
+            console.log("Clicked!")
+        },
     }
   }
   </script>
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  
-    
-    .Post {
-        background-color: #d0b998;
-    }
-    nav {
-    padding: 30px;
-    }
-
-    nav a {
-    font-weight: bold;
-    color: #2c3e50;
+    .post-element {
+        background-color: #97a79f;
     }
     
-    nav a.router-link-exact-active {
-    color: #2b8e61;
-    }
     h3 {
         margin: 40px 0 0;
     }
@@ -61,5 +62,21 @@
     }
     a {
         color: #2b8e61;
+    }
+    .post-footer{
+        display: flex;
+    }
+    .like_counter{
+        padding-left: 10px;
+        margin-top: 7px;
+    }
+    .post-element {
+        min-height: 150px;
+        /* max-width:fit-content; */
+        text-align: left;
+        margin: -5px 20px 40px 20px;
+        border-radius: 10px;
+        text-align: left;
+        padding: 5px 10px 10px 10px;
     }
   </style>

@@ -1,0 +1,92 @@
+ 
+[
+    {
+        "postID" : "0",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "tartu.jpg",
+        "postText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    },
+   
+    {
+        "postID" : "1",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "viljandi.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "2",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "rapla.webp",
+        "postText" : ""
+    },
+  
+  
+    {
+        "postID" : "3",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Hiiumaa.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "4",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "tartu2.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "5",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Delta.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "6",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Harpa.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "7",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Icecave.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "8",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Rams.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "9",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "Mountain.jpg",
+        "postText" : ""
+    },
+  
+    {
+        "postID" : "10",
+        "postDate" : "Oct 18, 2022",
+        "profilePicPath" : "Favicon.ico",
+        "postImage" : "tartu2.jpg",
+        "postText" : ""
+    }
+   
+ ]
