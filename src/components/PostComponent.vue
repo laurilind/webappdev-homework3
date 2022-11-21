@@ -1,6 +1,6 @@
 <template>
         
-    <div class="post-element">
+    <div class="post-element" postID="">
             <span id="post-header">
                 <img src="/logo.png" class="post-header-img" width="48" height="48">
                 <p class="post-date" id="post-element-date">Oct 22, 2022</p>
@@ -8,13 +8,13 @@
             <div class="post-image">
                 <img :src="'/'+imgPath" class="post-image">
             </div>
-            <p>Post 1 - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
                 veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
             </p>
             <div class="post-footer">
-                <img src="/thumbsup.png" width="32" height="32" @click="likeCounter++">
-                <p class = "like_counter">{{likeCounter}}</p>
+                <img src="/thumbsup.png" width="32" height="32" @click="onClick()" >
+                <p class = "like_counter">{{postLikes}}</p>
             </div>
     </div>
     
@@ -31,13 +31,16 @@ import { isIntegerKey } from '@vue/shared';
   	}
 	},
     props: {
+      postID: String,
       msg: String,
       date: String,
-      imgPath: String
+      imgPath: String,
+      postLikes: String
     },
     methods: {
-        onClick() {
-            console.log("Clicked!")
+        onClick(id) {
+            console.log("clicked! id=" + this.$props.postID);
+            this.$emit("likeClicked", this.$props.postID);
         },
     }
   }

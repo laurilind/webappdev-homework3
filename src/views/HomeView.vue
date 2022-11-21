@@ -4,13 +4,13 @@
       <div class="body-div">
         <div class="sidebar"></div>
         <ul>
-            <PostComponentVue class="post" :date="product.postDate" :msg="product.postText" :imgPath="product.postImage" v-for = "product in json" :key="product.id">
+            <PostComponentVue class="post" @like-clicked="onClickLike" :postLikes="product.postLikes" :postID="product.postID" :date="product.postDate" :msg="product.postText" :imgPath="product.postImage" v-for = "product in json" :key="product.id">
             
             </PostComponentVue>
         </ul>
         <div class="sidebar"></div>
       </div>
-      <p @click=resetLikes()>Reset likes</p>
+      <p @click="resetLikes">Reset likes</p>
     </div>
     
   </div>
@@ -30,6 +30,16 @@ export default {
     const json = this.$store.getters.getPosts
     return {json};
   },
+  methods: {
+    onClickLike(id) {
+        console.log("Event target id: " + id);
+        this.$store.dispatch("addLikeAct", {postID: id});
+    },
+    resetLikes(){
+        console.log("resetLikes");
+        this.$store.dispatch("resetLikesAct", {});
+    }
+  }
 }
 
 </script>

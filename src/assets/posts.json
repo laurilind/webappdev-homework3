@@ -5,7 +5,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "tartu.jpg",
-        "postText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        "postText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "postLikes" : 0
     },
    
     {
@@ -13,7 +14,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "viljandi.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -21,7 +23,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "rapla.webp",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
   
@@ -30,7 +33,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Hiiumaa.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -38,7 +42,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "tartu2.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -46,7 +51,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Delta.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -54,7 +60,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Harpa.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -62,7 +69,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Icecave.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -70,7 +78,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Rams.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -78,7 +87,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Mountain.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     },
   
     {
@@ -86,7 +96,8 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "tartu2.jpg",
-        "postText" : ""
+        "postText" : "",
+        "postLikes" : 0
     }
    
  ]
