@@ -1,11 +1,11 @@
 <template>
     <div class="Header">
         
-        <h1> WebDevHomework3</h1>
+        <h1> WebDevHomework4</h1>
         <nav>
             <router-link to="/">Home</router-link> |
             <router-link to="/signup">SignUp</router-link> |
-            <router-link to="/about">About</router-link>
+            <router-link to="/contacts">Contacts</router-link>
         </nav>
     </div>
   </template>
@@ -24,8 +24,9 @@
   
     
     .Header {
-        background-color: #a2c5b8;
+        background-color: #da9729;
         display: black;
+        margin: 0px 0px 10px 0px;
     }
     nav {
     padding: 30px;

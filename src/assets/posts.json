@@ -23,7 +23,7 @@
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "rapla.webp",
-        "postText" : "",
+        "postText" : "Yeet",
         "postLikes" : 0
     },
   
@@ -32,7 +32,7 @@
         "postID" : "3",
         "postDate" : "Oct 18, 2022",
         "profilePicPath" : "Favicon.ico",
-        "postImage" : "Hiiumaa.jpg",
+        "postImage" : "",
         "postText" : "",
         "postLikes" : 0
     },
@@ -48,7 +48,7 @@
   
     {
         "postID" : "5",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 19, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Delta.jpg",
         "postText" : "",
@@ -57,7 +57,7 @@
   
     {
         "postID" : "6",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 19, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Harpa.jpg",
         "postText" : "",
@@ -66,7 +66,7 @@
   
     {
         "postID" : "7",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 19, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Icecave.jpg",
         "postText" : "",
@@ -75,7 +75,7 @@
   
     {
         "postID" : "8",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 20, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Rams.jpg",
         "postText" : "",
@@ -84,7 +84,7 @@
   
     {
         "postID" : "9",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 20, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "Mountain.jpg",
         "postText" : "",
@@ -93,7 +93,7 @@
   
     {
         "postID" : "10",
-        "postDate" : "Oct 18, 2022",
+        "postDate" : "Oct 20, 2022",
         "profilePicPath" : "Favicon.ico",
         "postImage" : "tartu2.jpg",
         "postText" : "",

@@ -3,18 +3,19 @@
     <div class="post-element" postID="">
             <span id="post-header">
                 <img src="/logo.png" class="post-header-img" width="48" height="48">
-                <p class="post-date" id="post-element-date">Oct 22, 2022</p>
+                <p class="post-date" id="post-element-date">{{date}}</p>
             </span>
             <div class="post-image">
                 <img :src="'/'+imgPath" class="post-image">
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Necessitatibus ullam voluptates veniam, alias modi nulla nobis nisi quo reprehenderit cupiditate, 
                 veritatis tenetur voluptate corporis corrupti ipsa, accusantium minus porro quae.
             </p>
             <div class="post-footer">
                 <img src="/thumbsup.png" width="32" height="32" @click="onClick()" >
-                <p class = "like_counter">{{postLikes}}</p>
+                <p class = "like_counter">{{}}</p>
             </div>
     </div>
     
@@ -28,14 +29,15 @@ import { isIntegerKey } from '@vue/shared';
     data() {
 	  return {
     	likeCounter: 0
-  	}
+  	    }
 	},
     props: {
       postID: String,
       msg: String,
       date: String,
-      imgPath: String,
-      postLikes: String
+
+    //   imgPath: String,
+    //   postLikes: String
     },
     methods: {
         onClick(id) {
@@ -49,7 +51,7 @@ import { isIntegerKey } from '@vue/shared';
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
     .post-element {
-        background-color: #97a79f;
+        background-color: #d98f17;
     }
     
     h3 {
@@ -64,7 +66,7 @@ import { isIntegerKey } from '@vue/shared';
         margin: 0 10px;
     }
     a {
-        color: #2b8e61;
+        color: #e8cc17;
     }
     .post-footer{
         display: flex;

@@ -1,25 +1,27 @@
 <template>
-  <div>
-    <div class="home">
-      <div class="body-div">
-        <div class="sidebar"></div>
+    <div class="AllPosts">
+      <div id="post-list">
+      <h1>All Posts</h1>
         <ul>
-            <PostComponentVue class="post" @like-clicked="onClickLike" :postLikes="product.postLikes" :postID="product.postID" :date="product.postDate" :msg="product.postText" :imgPath="product.postImage" v-for = "product in json" :key="product.id">
-            
-            </PostComponentVue>
+          <div class="post-element" v-for="post in posts" :key="post.id">
+            <!-- / We are putting an anchor for each post, when we click on it, we will be directed to the specific post view (/apost/) /  -->
+            <a class="singlepost" :href="'/api/apost/' + post.id">
+              <span class="title"> <b>Title:</b> {{ post.title }} </span> <br />
+              <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
+              <span class="date"> <b>Date:</b> {{ post.date }} </span> <br />
+            </a>
+          </div>
         </ul>
-        <div class="sidebar"></div>
       </div>
-      <p @click="resetLikes">Reset likes</p>
     </div>
-    
-  </div>
-</template>
+  </template>
+  
 
 <script>
 // @ is an alias to /src
 import PostComponentVue from '@/components/PostComponent.vue';
 import store from '@/store';
+import { onMounted } from 'vue';
 export default {
   name: 'HomeView',
   
@@ -27,136 +29,74 @@ export default {
     PostComponentVue
   },
   data: function() {
-    const json = this.$store.getters.getPosts
-    return {json};
+    return {
+        posts: [],
+    };
   },
   methods: {
-    onClickLike(id) {
-        console.log("Event target id: " + id);
-        this.$store.dispatch("addLikeAct", {postID: id});
+    fetchPosts(){
+        console.log("Fetching posts");
+
+        fetch(`http://localhost:3000/api/posts`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
+
+        console.log("reached all posts request");
     },
-    resetLikes(){
-        console.log("resetLikes");
-        this.$store.dispatch("resetLikesAct", {});
-    }
-  }
-}
 
-</script>
-<style>
-
-body {
-    margin: 0;
-}
-
-head {
-    align-self: center;
-}
-
-.show {display:block;}
-
-
-.sidebar{
-  background-color: #a2c5b8;
-}
-
-ul {
-      padding-left: 0px;
-    }
-
-/* for desktop */
-@media (min-width:1025px) {
-    .body-div {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        height: max-content;
-    }
-
-    .sidebar {
-        border-radius: 10px;
-        text-align: center;
-        min-width: 15%;
-        margin: 10px 10px 10px 10px;
-    }
-
-
-    .post-element .post-image {
-        width: 100%;
-        height: auto;
-    }
+    // onClickLike(id) {
+    //     console.log("Event target id: " + id);
+    //     this.$store.dispatch("addLikeAct", {postID: id});
+    // },
+    // resetLikes(){
+    //     console.log("resetLikes");
+    //     this.$store.dispatch("resetLikesAct", {});
+    // }
     
+  },
+
+  mounted(){
+    this.fetchPosts();
+  }
 
 }
+</script>
 
-/* for mobile */
-@media only screen and (max-width: 768px) {
-    .body-div {
-        display: flex;
-        justify-content: left;
-        align-content: center;
-        width: 100%;
-        height: max-content;
-        padding: 0px 0px 0px 0px;
-        margin: 0px 0px 0px 0px;
-    }
-    .sidebar {
-        width: 0%;
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-    }
 
-    .post-list {
-        margin: 0;
-        padding: 0px 0px 0px 0px;
-        width: 100%;
-    }
-
-    .post-element {
-        min-height: 150px;
-        max-width: 100%;
-        text-align: left;
-        border-radius: 10px;
-        margin: 0 auto;
-        padding: 0px 0px 0px 0px;
-    }
-
-    .post-element .post-image {
-        width: 100%;
-        padding: auto;
-    }
-
-    .post-element p {
-        padding: 0px 5px 0px 5px;
-    }
+<style scoped>
+h1 {
+  font-size: 20px;
 }
-
-#post-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 20px 20px 20px;
-    font-size: 20px;
+a {
+  text-decoration: none;
 }
-
-#post-header~p {
-    font-size: 25px;
+a:hover {
+  text-decoration: underline;
 }
-
-#post-header~post-content {
-    font-size: 25px;
+.post-element {
+  background: rgb(227, 227, 227);
+  margin-bottom: 5px;
+  padding: 3px 5px;
+  border-radius: 10px;
 }
-
-#post-header+img {
-    display: flex;
+#post-list {
+  background: #da9729;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  margin: auto;
+  width: 50%;
+  border-radius: 20px;
 }
-
-p::first-letter {
-    font-weight: 500;
-    font-variant: small-caps;
+#post-list ul {
+  padding: 0;
 }
-
-footer {
-    justify-content: center;
-    text-align: center;
+#post-list li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  background: rgba(255, 204, 0, 0.7);
 }
 </style>
