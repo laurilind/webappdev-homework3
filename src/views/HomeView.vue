@@ -1,4 +1,7 @@
+
+
 <template>
+    <input type="button" class="logout-button" value="Log out" @click="clickedLogout">
     <div class="AllPosts">
       <div id="post-list">
       <h1>All Posts</h1>
@@ -14,19 +17,25 @@
         </ul>
       </div>
     </div>
-  </template>
+
+    <span class="bottom-frame">
+        <input type="button" class="addpost-button" value="Add Post" @click="clickedAddPost">
+        <input type="button" class="deleteposts-button" value="Delete All Posts" @click="clickedDeletePosts">
+    </span>
+</template>
   
 
 <script>
 // @ is an alias to /src
 import PostComponentVue from '@/components/PostComponent.vue';
+import APost from '../views/APost.vue';
 import store from '@/store';
 import { onMounted } from 'vue';
 export default {
   name: 'HomeView',
   
   components: {
-    PostComponentVue
+    APost
   },
   data: function() {
     return {
@@ -37,13 +46,37 @@ export default {
     fetchPosts(){
         console.log("Fetching posts");
 
-        fetch(`http://localhost:3000/api/posts`)
+        fetch(`http://localhost:3000/api/posts/`)
         .then((response) => response.json())
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
 
         console.log("reached all posts request");
     },
+
+    clickedLogout(){
+        this.$router.push({ name: 'login' })
+    },
+
+    clickedAddPost(){
+        this.$router.push({ name: 'addpost' })
+    },
+
+    clickedDeletePosts() {
+      // using Fetch - delete method - delets a specific post based on the passed id
+      fetch(`http://localhost:3000/api/posts`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          console.log(response.data);
+          // We are using the router instance of this element to navigate to a different URL location
+          this.fetchPosts();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
 
     // onClickLike(id) {
     //     console.log("Event target id: " + id);
@@ -98,5 +131,9 @@ a:hover {
   margin-top: 10px;
   padding: 20px;
   background: rgba(255, 204, 0, 0.7);
+}
+.logout-button {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 </style>

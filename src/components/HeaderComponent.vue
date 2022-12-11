@@ -4,9 +4,9 @@
         <h1> WebDevHomework4</h1>
         <nav>
             <router-link to="/">Home</router-link> |
-            <router-link to="/signup">SignUp</router-link> |
-            <router-link to="/login">LogIn</router-link> |
-            <router-link to="/contacts">Contacts</router-link>
+            <router-link to="/login">Log In</router-link> |
+            <router-link to="/contacts">Contacts</router-link> |
+            <router-link to="/addpost">Add a Post</router-link> 
             
         </nav>
     </div>
@@ -30,6 +30,7 @@
         display: black;
         margin: 0px 0px 10px 0px;
     }
+
     nav {
     padding: 30px;
     }
