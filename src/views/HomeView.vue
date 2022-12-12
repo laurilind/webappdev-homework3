@@ -8,11 +8,11 @@
         <ul>
           <div class="post-element" v-for="post in posts" :key="post.id">
             <!-- / We are putting an anchor for each post, when we click on it, we will be directed to the specific post view (/apost/) /  -->
-            <a class="singlepost" :href="'/api/apost/' + post.id">
+            <router-link class="singlepost" :to="'/api/apost/' + post.id">
               <span class="title"> <b>Title:</b> {{ post.title }} </span> <br />
               <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
-              <span class="date"> <b>Date:</b> {{ post.date }} </span> <br />
-            </a>
+              <span class="url"> <b>URL:</b> {{ post.urllink }} </span> <br />
+            </router-link>
           </div>
         </ul>
       </div>
@@ -30,6 +30,7 @@
 import PostComponentVue from '@/components/PostComponent.vue';
 import APost from '../views/APost.vue';
 import store from '@/store';
+import auth from '../auth'
 import { onMounted } from 'vue';
 export default {
   name: 'HomeView',
@@ -40,6 +41,8 @@ export default {
   data: function() {
     return {
         posts: [],
+        authResult: auth.authenticated()
+
     };
   },
   methods: {
@@ -51,11 +54,7 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
 
-        console.log("reached all posts request");
-    },
-
-    clickedLogout(){
-        this.$router.push({ name: 'login' })
+        console.log("finished all posts request");
     },
 
     clickedAddPost(){
@@ -76,7 +75,25 @@ export default {
         .catch((e) => {
           console.log(e);
         });
-    }
+    },
+
+    clickedLogout() {
+      fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
+      });
+    },
 
     // onClickLike(id) {
     //     console.log("Event target id: " + id);

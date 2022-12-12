@@ -67,10 +67,11 @@ export default {
         .then((response) => {
           console.log(response.data);
           // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push('home');
+          
+          this.$router.push({name : 'home'});
         })
         .catch((e) => {
-          console.log(e);
+          console.error(e);
         });
     },
   },

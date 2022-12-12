@@ -4,13 +4,9 @@ import SignUpView from '../views/SignUpView.vue'
 import LoginView from '../views/LoginView.vue'
 import AddPostView from '../views/AddPostView.vue'
 import APost from '../views/APost.vue'
+import auth from '../auth'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
   {
     path: '/signup',
     name: 'signup',
@@ -38,6 +34,19 @@ const routes = [
     path: "/api/apost/:id",
     name: "APost",
     component: APost,
+  },
+  {
+    path: "/",
+    name: "home",
+    component: HomeView,
+    beforeEnter: async(to, from, next) => {
+        let authResult = await auth.authenticated();
+        if (!authResult) {
+            next('/login')
+        } else {
+          next()
+        }
+    }
   },
   { //will route to home view if none of the previous routes apply
     path: "/:catchAll(.*)",

@@ -24,7 +24,14 @@ export default {
   name: 'SignUpComponent',
 
   methods: {
+    
     clicked() {
+
+        var data = {
+            email: this.$refs.email.value,
+            password: this.$refs.password.value
+        };
+
         let email = this.$refs.email.value;
         let password = this.$refs.password.value;
         var i = 0;
@@ -55,28 +62,36 @@ export default {
             }
         }
 
-        if (password.length < 8 || password.length > 14) {
-            window.alert("Password is not the correct length!")
+        if (password.length < 3 || password.length > 14) {
+            window.alert("Password is not the correct length!");
+            return;
         }
         else if (upperCaseLetters < 1) {
             window.alert("Password has to contain at least one uppercase character!")
+            return;
         }
-        else if (lowerCaseLetters < 3) {
-            window.alert("Password has to contain more than two lowercase characters!")
-        }
-        else if (numbers < 1) {
-            window.alert("Password has to contain at least one numberic value!")
-        }
-        else if (!firstIsUppercase) {
-            window.alert("First character of the password should be an uppercase character!")
-        }
-        else if (!includes) {
-            window.alert("Password should include the character '_'!")
-        }
-        else {
-            this.$refs.email.value="";
-            this.$refs.password.value="";
-        }
+
+
+        console.log("Reached authentication")
+        
+        fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+          body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+      console.log(data);
+      this.$router.push("/");
+      //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error");
+      });
     }
   }
   
@@ -92,8 +107,6 @@ export default {
 .post-element {
    padding: 30px;
 }
-
-
 
 
 .top {
